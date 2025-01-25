@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const OUTPUT_FOLDER_NAME = path.resolve(__dirname, "dist"); // Папка, куда всё заливаться сбилженный проект.
+const OUTPUT_FOLDER_NAME = path.resolve(__dirname, "build"); // Папка, куда всё заливаться сбилженный проект.
 
 module.exports = {
   mode: "development",
