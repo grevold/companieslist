@@ -1,31 +1,31 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const OUTPUT_FOLDER_NAME = path.resolve(__dirname, "build"); // Папка, куда всё заливаться сбилженный проект.
+const OUTPUT_FOLDER_NAME = path.resolve(__dirname, 'build'); // Папка, куда всё заливаться сбилженный проект.
 
 module.exports = {
-  mode: "development",
-  entry: "./src/index.tsx",
+  mode: 'development',
+  entry: './src/index.tsx',
   output: {
     path: OUTPUT_FOLDER_NAME,
-    filename: "bundle.js",
+    filename: 'bundle.js',
     clean: true, // Очищает выходную папку перед сборкой
   }, // выходной файл
   resolve: {
-    extensions: [".tsx", ".ts", ".js", "jsx"],
+    extensions: ['.tsx', '.ts', '.js', 'jsx'],
   },
   module: {
     rules: [
       {
         test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
-        use: "ts-loader",
+        use: 'ts-loader',
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: './public/index.html',
       BASE_URL: process.env.BASE_URL,
     }),
   ],
