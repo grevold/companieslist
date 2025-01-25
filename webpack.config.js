@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: OUTPUT_FOLDER_NAME,
     filename: "bundle.js",
-    clean: true // Очищает выходную папку перед сборкой
+    clean: true, // Очищает выходную папку перед сборкой
   }, // выходной файл
   resolve: {
     extensions: [".tsx", ".ts", ".js", "jsx"],
@@ -26,6 +26,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      BASE_URL: process.env.BASE_URL,
     }),
   ],
   devServer: {
