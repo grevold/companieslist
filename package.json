@@ -5,9 +5,9 @@
   "main": "index.js",
   "homepage": "https://grevold.github.io/companieslist/",
   "scripts": {
-    "build": "npx webpack --mode production",
+    "build": "cross-env BASE_URL=/ npx webpack --mode production",
+    "predeploy": "cross-env BASE_URL=https://grevold.github.io/companieslist npx webpack --mode production",
     "start": "npx webpack server",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "author": "Alexey Grevtsov",
@@ -15,6 +15,7 @@
   "devDependencies": {
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
+    "cross-env": "7.0.3",
     "gh-pages": "6.3.0",
     "html-webpack-plugin": "5.6.3",
     "ts-loader": "9.5.2",
