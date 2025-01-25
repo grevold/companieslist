@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://grevold.github.io/companieslist/",
   "scripts": {
     "build": "npx webpack --mode production",
-    "start": "npx webpack server"
+    "start": "npx webpack server",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "Alexey Grevtsov",
   "license": "ISC",
   "devDependencies": {
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
+    "gh-pages": "6.3.0",
     "html-webpack-plugin": "5.6.3",
     "ts-loader": "9.5.2",
     "typescript": "5.7.3",
